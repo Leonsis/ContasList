@@ -1,0 +1,18 @@
+#registro h1{
+    width: 100%;
+    display: block;
+    color: var(--cor-secudaria);
+}
+
+#registro .imagem{
+    text-align: center;
+    margin: 0 auto;
+    width: 500px;
+    position: relative;
+}
+
+@media (max-width: 576px) {
+    #registro .imagem img{
+        display: none;
+    }
+}
