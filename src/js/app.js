@@ -39,6 +39,28 @@ class Bd {
         localStorage.setItem(id, JSON.stringify(despesa));
         localStorage.setItem('id', id);
     }
+
+    recuperarTodosRegistros() {
+        // Array de despesas
+        let despesas = Array();
+
+        let id = localStorage.getItem('id');
+
+        // Estrutura de repetição para recuperar os ids do localStorage
+        for(let i = 1; i <= id; i++) {
+            //Recuperar a despesa
+            let despesa = JSON.parse(localStorage.getItem(i));// Metodo JSOM para tremformar os caracteres JSOM em caracteres Literais
+            /*
+                Estrutura de decisão para verificar se existe ou não indces que foram removidos,
+                neste caso nós vamos  pular esses indces
+            */
+            if(despesa === null) {
+                continue;
+            }
+            despesas.push(despesa);
+        }
+        return despesas;
+    }
 }
 const bd = new Bd;
 
@@ -81,4 +103,48 @@ function cadastrarDespesa() {
         botao.classList.add('btn-danger');
         $('#modalRegistraDespesa').modal('show'); //Linha de código em Jquery;
     }
+}
+
+function carregaListaDespesas() {
+    let despesas = Array();
+    despesas = bd.recuperarTodosRegistros();
+
+    //Selecionando o elemento tbody da tabela
+    const listaDespesas = document.getElementById('listaDespesas');
+    
+    //Percorrer o array despesas listando casda despesa de forma dimnamica
+    despesas.forEach(function(d) {
+         
+        let linha = listaDespesas.insertRow();//Com o método isertRow é possivel inseririr linhas no código html
+
+        //Criando as colunas
+        linha.insertCell(0).innerHTML = `${d.dia}/${d.mes}/${d.ano}`;
+        //ajustar o tipo.
+        switch(d.tipo) {
+            case '1': d.tipo = 'Alimentação';
+                break;
+            case '2': d.tipo = 'Educação';
+                break;
+            case '3': d.tipo = 'Lazer';
+                break;
+            case '4': d.tipo = 'Saúde';
+                break;
+            case '5': d.tipo = 'Transporte';
+                break;
+        }
+        linha.insertCell(1).innerHTML = d.tipo;
+        linha.insertCell(2).innerHTML = d.descricao;
+        linha.insertCell(3).innerHTML = d.valor;//Com o método insertCell é possivel criar as colunas
+        /*
+            Neste caso estou fazendo uma fução de callback Aroow
+            que está criando um linha e uma coluna para cada valor informado do array despessas,
+            com o uso so forEach que percorre Array despesas;
+        */
+    });
+    /*
+        Mas tabem pode ser feita da seguinte formar:
+        despesa.forEach(function(d) {
+            console.log(d)
+        })
+    */
 }
