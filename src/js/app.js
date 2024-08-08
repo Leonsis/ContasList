@@ -95,6 +95,13 @@ function cadastrarDespesa() {
         botao.classList.add('sucessoBotao');
         botao.classList.remove('btn-danger');
         $('#modalRegistraDespesa').modal('show'); //Linha de código em Jquery;
+
+        ano.value = '';
+        mes.value = '';
+        dia.value = '';
+        tipo.value = '';
+        descricao.value = '';
+        valor.value = '';
     } else {
         titulo.innerHTML = 'Erro ao registrar';
         titulo.classList.add('text-danger');
