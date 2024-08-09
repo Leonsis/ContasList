@@ -31,3 +31,7 @@
 #registro .descricao{
     text-align: center;
 }
+
+#registro .form-control {
+        margin-bottom: 3px;
+}
