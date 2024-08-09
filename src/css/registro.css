@@ -4,14 +4,6 @@
     color: var(--cor-secudaria);
 }
 
-#registro .imagem{
-    text-align: center;
-    margin: 0 auto;
-    width: 100%;
-    position: relative;
-    z-index: 0; 
-}
-
 @media (max-width: 576px) {
 
     #registro .imagem img{
@@ -20,6 +12,7 @@
 }
 
 #registro .form{
+    background: url(../img/imgFundo\ \(1\).jpg) no-repeat center;
     height: 500px;
 }
 
@@ -29,12 +22,6 @@
         border-bottom: 1px solid var(--cor-principal);
         margin-bottom: 5px;
     }
-}
-
-#registro .caixa {
-    z-index: 1;
-    position: absolute;
-    margin-left: -17px;
 }
 
 #registro .bloco{
