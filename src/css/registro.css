@@ -1,0 +1,42 @@
+#registro h1{
+    width: 100%;
+    display: block;
+    color: var(--cor-secudaria);
+}
+
+#registro .imagem{
+    text-align: center;
+    margin: 0 auto;
+    width: 100%;
+    position: relative;
+    z-index: 0; 
+}
+
+@media (max-width: 576px) {
+
+    #registro .imagem img{
+        display: none;
+    }
+}
+
+#registro .form{
+    height: 500px;
+}
+
+@media (max-width: 768px) {
+
+    #registro .titulo{
+        border-bottom: 1px solid var(--cor-principal);
+        margin-bottom: 5px;
+    }
+}
+
+#registro .caixa {
+    z-index: 1;
+    position: absolute;
+    margin-left: -17px;
+}
+
+#registro .bloco{
+    height: 500px;
+}
