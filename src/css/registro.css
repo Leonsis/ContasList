@@ -28,6 +28,6 @@
     height: 500px;
 }
 
-#registro #titulo{
-    text-align: centrer;
+#registro .titulo{
+    text-align: center;
 }
