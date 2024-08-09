@@ -27,3 +27,7 @@
 #registro .bloco{
     height: 500px;
 }
+
+#registro .titulo{
+    text-align: centrer;
+}
