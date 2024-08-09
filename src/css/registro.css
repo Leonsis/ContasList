@@ -1,0 +1,36 @@
+#registro h1{
+    width: 100%;
+    display: block;
+    color: var(--cor-secudaria);
+}
+
+#registro .imagem{
+    text-align: center;
+    margin: 0 auto;
+    width: 500px;
+    position: relative;
+}
+
+@media (max-width: 576px) {
+    
+    #registro .imagem img{
+        display: none;
+    }
+}
+
+#registro .form{
+    background: url(../img/imgFundo\ \(1\).jpg) no-repeat center;
+    height: 500px;
+}
+
+@media (max-width: 768px) {
+
+    #registro .titulo{
+        border-bottom: 1px solid var(--cor-principal);
+        margin-bottom: 5px;
+    }
+}
+
+#registro .bloco{
+    height: 500px;
+}
